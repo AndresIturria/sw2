@@ -4,13 +4,21 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const nunjucks = require('nunjucks');
+const morgan = require('morgan');
 
 //Initializations
 require('./database');
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var circuitsRouter = require('./routes/circuits');
+var constructorsRouter = require('./routes/constructors');
+var constructorResultsRouter = require('./routes/constructorResults');
+var driversRouter = require('./routes/drivers');
+var qualifyingsRouter = require('./routes/qualifyings');
+var racesRouter = require('./routes/races');
+var resultsRouter = require('./routes/results');
+
 
 var app = express();
 
@@ -33,7 +41,13 @@ app.use(morgan(':method :url :status :response-time ms :body '));
 
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/circuits', circuitsRouter);
+app.use('/constructors', constructorsRouter);
+app.use('/constructoResults', constructorResultsRouter);
+app.use('/drivers', driversRouter);
+app.use('/qualifyings', qualifyingsRouter);
+app.use('/races', racesRouter);
+app.use('/results', resultsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
