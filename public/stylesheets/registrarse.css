@@ -1,0 +1,51 @@
+.h2-title{
+    padding: 1%;
+    text-align:center;
+}
+
+
+.container{
+    padding: 1%;
+    background: #F6F3EB;
+}
+
+
+.signup{
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    grid-template-rows: 0.5fr 1fr;
+    gap: 1px 0px;
+    grid-template-areas:
+    "photo signup-form"
+    "photo-desc signup-form";
+}
+
+#profile-pic {
+    margin: 20px;
+    grid-area: photo;
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+}
+
+
+.signup-form {
+    grid-area: signup-form;
+    font-size: 120%;
+}
+#registro {
+    text-align:center;
+}
+#upload {
+    display: none;
+}
+
+.btn-success {
+    float: right;
+    margin: 4px;
+}
+
+.btn-danger{
+    float: left;
+    margin: 4px;
+}
