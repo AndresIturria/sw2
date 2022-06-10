@@ -21,7 +21,7 @@
                 </xs:simpleType>
             </xs:element>
 
-            <xs:element name="name" type="xs:string">
+            <xs:element name="name" >
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:minLength value="3"/>
@@ -30,7 +30,7 @@
                 </xs:simpleType>
             </xs:element>
 
-            <xs:element name="nationality" type="xs:string">
+            <xs:element name="nationality" >
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:enumeration value="Afghan"/>
