@@ -15,6 +15,7 @@
     "jade": "~1.11.0",
     "mongoose": "^6.3.4",
     "morgan": "~1.9.1",
-    "nunjucks": "^3.2.3"
+    "nunjucks": "^3.2.3",
+    "xsd-schema-validator": "^0.7.0"
   }
 }

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="constructor">
+    <xs:complexType>
+        <xs:sequence>
+
+            <xs:element name="constructorId">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="constructorRef">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="3"/>
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="name" >
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="3"/>
+                        <xs:maxLength value="32"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="nationality" >
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Afghan"/>
+                        <xs:enumeration value="Albanian"/>
+                        <xs:enumeration value="Algerian"/>
+                        <xs:enumeration value="American"/>
+                        <xs:enumeration value="Andorran"/>
+                        <xs:enumeration value="Angolan"/>
+                        <xs:enumeration value="Antiguans"/>
+                        <xs:enumeration value="Argentinean"/>
+                        <xs:enumeration value="Armenian"/>
+                        <xs:enumeration value="Australian"/>
+                        <xs:enumeration value="Austrian"/>
+                        <xs:enumeration value="Azerbaijani"/>
+                        <xs:enumeration value="Bahamian"/>
+                        <xs:enumeration value="Bahraini"/>
+                        <xs:enumeration value="Bangladeshi"/>
+                        <xs:enumeration value="Barbadian"/>
+                        <xs:enumeration value="Barbudans"/>
+                        <xs:enumeration value="Batswana"/>
+                        <xs:enumeration value="Belarusian"/>
+                        <xs:enumeration value="Belgian"/>
+                        <xs:enumeration value="Belizean"/>
+                        <xs:enumeration value="Beninese"/>
+                        <xs:enumeration value="Bhutanese"/>
+                        <xs:enumeration value="Bolivian"/>
+                        <xs:enumeration value="Bosnian"/>
+                        <xs:enumeration value="Brazilian"/>
+                        <xs:enumeration value="British"/>
+                        <xs:enumeration value="Bruneian"/>
+                        <xs:enumeration value="Bulgarian"/>
+                        <xs:enumeration value="Burkinabe"/>
+                        <xs:enumeration value="Burmese"/>
+                        <xs:enumeration value="Burundian"/>
+                        <xs:enumeration value="Cambodian"/>
+                        <xs:enumeration value="Cameroonian"/>
+                        <xs:enumeration value="Canadian"/>
+                        <xs:enumeration value="Cape Verdean"/>
+                        <xs:enumeration value="Central African"/>
+                        <xs:enumeration value="Chadian"/>
+                        <xs:enumeration value="Chilean"/>
+                        <xs:enumeration value="Chinese"/>
+                        <xs:enumeration value="Colombian"/>
+                        <xs:enumeration value="Comoran"/>
+                        <xs:enumeration value="Congolese"/>
+                        <xs:enumeration value="Costa Rican"/>
+                        <xs:enumeration value="Croatian"/>
+                        <xs:enumeration value="Cuban"/>
+                        <xs:enumeration value="Cypriot"/>
+                        <xs:enumeration value="Czech"/>
+                        <xs:enumeration value="Danish"/>
+                        <xs:enumeration value="Djibouti"/>
+                        <xs:enumeration value="Dominican"/>
+                        <xs:enumeration value="Dutch"/>
+                        <xs:enumeration value="East Timorese"/>
+                        <xs:enumeration value="Ecuadorean"/>
+                        <xs:enumeration value="Egyptian"/>
+                        <xs:enumeration value="Emirian"/>
+                        <xs:enumeration value="Equatorial Guinean"/>
+                        <xs:enumeration value="Eritrean"/>
+                        <xs:enumeration value="Estonian"/>
+                        <xs:enumeration value="Ethiopian"/>
+                        <xs:enumeration value="Fijian"/>
+                        <xs:enumeration value="Filipino"/>
+                        <xs:enumeration value="Finnish"/>
+                        <xs:enumeration value="French"/>
+                        <xs:enumeration value="Gabonese"/>
+                        <xs:enumeration value="Gambian"/>
+                        <xs:enumeration value="Georgian"/>
+                        <xs:enumeration value="German"/>
+                        <xs:enumeration value="Ghanaian"/>
+                        <xs:enumeration value="Greek"/>
+                        <xs:enumeration value="Grenadian"/>
+                        <xs:enumeration value="Guatemalan"/>
+                        <xs:enumeration value="Guinea-Bissauan"/>
+                        <xs:enumeration value="Guinean"/>
+                        <xs:enumeration value="Guyanese"/>
+                        <xs:enumeration value="Haitian"/>
+                        <xs:enumeration value="Herzegovinian"/>
+                        <xs:enumeration value="Honduran"/>
+                        <xs:enumeration value="Hungarian"/>
+                        <xs:enumeration value="I-Kiribati"/>
+                        <xs:enumeration value="Icelander"/>
+                        <xs:enumeration value="Indian"/>
+                        <xs:enumeration value="Indonesian"/>
+                        <xs:enumeration value="Iranian"/>
+                        <xs:enumeration value="Iraqi"/>
+                        <xs:enumeration value="Irish"/>
+                        <xs:enumeration value="Israeli"/>
+                        <xs:enumeration value="Italian"/>
+                        <xs:enumeration value="Ivorian"/>
+                        <xs:enumeration value="Jamaican"/>
+                        <xs:enumeration value="Japanese"/>
+                        <xs:enumeration value="Jordanian"/>
+                        <xs:enumeration value="Kazakhstani"/>
+                        <xs:enumeration value="Kenyan"/>
+                        <xs:enumeration value="Kittian and Nevisian"/>
+                        <xs:enumeration value="Kuwaiti"/>
+                        <xs:enumeration value="Kyrgyz"/>
+                        <xs:enumeration value="Laotian"/>
+                        <xs:enumeration value="Latvian"/>
+                        <xs:enumeration value="Lebanese"/>
+                        <xs:enumeration value="Liberian"/>
+                        <xs:enumeration value="Libyan"/>
+                        <xs:enumeration value="Liechtensteiner"/>
+                        <xs:enumeration value="Lithuanian"/>
+                        <xs:enumeration value="Luxembourger"/>
+                        <xs:enumeration value="Macedonian"/>
+                        <xs:enumeration value="Malagasy"/>
+                        <xs:enumeration value="Malawian"/>
+                        <xs:enumeration value="Malaysian"/>
+                        <xs:enumeration value="Maldivian"/>
+                        <xs:enumeration value="Malian"/>
+                        <xs:enumeration value="Maltese"/>
+                        <xs:enumeration value="Marshallese"/>
+                        <xs:enumeration value="Mauritanian"/>
+                        <xs:enumeration value="Mauritian"/>
+                        <xs:enumeration value="Mexican"/>
+                        <xs:enumeration value="Micronesian"/>
+                        <xs:enumeration value="Moldovan"/>
+                        <xs:enumeration value="Monacan"/>
+                        <xs:enumeration value="Mongolian"/>
+                        <xs:enumeration value="Moroccan"/>
+                        <xs:enumeration value="Mosotho"/>
+                        <xs:enumeration value="Motswana"/>
+                        <xs:enumeration value="Mozambican"/>
+                        <xs:enumeration value="Namibian"/>
+                        <xs:enumeration value="Nauruan"/>
+                        <xs:enumeration value="Nepalese"/>
+                        <xs:enumeration value="New Zealander"/>
+                        <xs:enumeration value="Ni-Vanuatu"/>
+                        <xs:enumeration value="Nicaraguan"/>
+                        <xs:enumeration value="Nigerian"/>
+                        <xs:enumeration value="Nigerien"/>
+                        <xs:enumeration value="North Korean"/>
+                        <xs:enumeration value="Northern Irish"/>
+                        <xs:enumeration value="Norwegian"/>
+                        <xs:enumeration value="Omani"/>
+                        <xs:enumeration value="Pakistani"/>
+                        <xs:enumeration value="Palauan"/>
+                        <xs:enumeration value="Panamanian"/>
+                        <xs:enumeration value="Papua New Guinean"/>
+                        <xs:enumeration value="Paraguayan"/>
+                        <xs:enumeration value="Peruvian"/>
+                        <xs:enumeration value="Polish"/>
+                        <xs:enumeration value="Portuguese"/>
+                        <xs:enumeration value="Qatari"/>
+                        <xs:enumeration value="Romanian"/>
+                        <xs:enumeration value="Russian"/>
+                        <xs:enumeration value="Rwandan"/>
+                        <xs:enumeration value="Saint Lucian"/>
+                        <xs:enumeration value="Salvadoran"/>
+                        <xs:enumeration value="Samoan"/>
+                        <xs:enumeration value="San Marinese"/>
+                        <xs:enumeration value="Sao Tomean"/>
+                        <xs:enumeration value="Saudi"/>
+                        <xs:enumeration value="Scottish"/>
+                        <xs:enumeration value="Senegalese"/>
+                        <xs:enumeration value="Serbian"/>
+                        <xs:enumeration value="Seychellois"/>
+                        <xs:enumeration value="Sierra Leonean"/>
+                        <xs:enumeration value="Singaporean"/>
+                        <xs:enumeration value="Slovakian"/>
+                        <xs:enumeration value="Slovenian"/>
+                        <xs:enumeration value="Solomon Islander"/>
+                        <xs:enumeration value="Somali"/>
+                        <xs:enumeration value="South African"/>
+                        <xs:enumeration value="South Korean"/>
+                        <xs:enumeration value="Spanish"/>
+                        <xs:enumeration value="Sri Lankan"/>
+                        <xs:enumeration value="Sudanese"/>
+                        <xs:enumeration value="Surinamer"/>
+                        <xs:enumeration value="Swazi"/>
+                        <xs:enumeration value="Swedish"/>
+                        <xs:enumeration value="Swiss"/>
+                        <xs:enumeration value="Syrian"/>
+                        <xs:enumeration value="Taiwanese"/>
+                        <xs:enumeration value="Tajik"/>
+                        <xs:enumeration value="Tanzanian"/>
+                        <xs:enumeration value="Thai"/>
+                        <xs:enumeration value="Togolese"/>
+                        <xs:enumeration value="Tongan"/>
+                        <xs:enumeration value="Trinidadian or Tobagonian"/>
+                        <xs:enumeration value="Tunisian"/>
+                        <xs:enumeration value="Turkish"/>
+                        <xs:enumeration value="Tuvaluan"/>
+                        <xs:enumeration value="Ugandan"/>
+                        <xs:enumeration value="Ukrainian"/>
+                        <xs:enumeration value="Uruguayan"/>
+                        <xs:enumeration value="Uzbekistani"/>
+                        <xs:enumeration value="Venezuelan"/>
+                        <xs:enumeration value="Vietnamese"/>
+                        <xs:enumeration value="Welsh"/>
+                        <xs:enumeration value="Yemenite"/>
+                        <xs:enumeration value="Zambian"/>
+                        <xs:enumeration value="Zimbabwean"/>
+
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>
