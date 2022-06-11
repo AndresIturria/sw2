@@ -6,9 +6,15 @@ Jaime Gisbert
 Cristina Abdul-Massih  
 
 
-instructions
-Create a .env file with API_KEY
-FOR XML VALIDATION JAVA NEEDS TO BE INSTALLED AND ENV VARIABLE JAVA_HOME NEEDS
-TO BE SET IN THE OS.  
-Para que se cree la base de datos correctamente primero empezar el servidor y 
-hacer un get de cada ruta y despues importar los datos.
+## Instrucciones
+
+- Crear en la carpeta root del proyecto un fichero .env con el contenido: API_KEY="api_key de weatherapi".
+- Para validar XML se usa una libreria que depende de Java, tiene que estar Java instalado y la variable de entorno
+JAVA_HOME tiene que estar configurada en el equipo.
+- Recrear la base de datos:  
+  - Primero iniciar la aplicación y hacer un get de las 5 rutas, esto hace que se cree la base de datos y 
+las colecciones con las restricciones.
+  - Para añadir los datos iniciales se proveen ficheros csv en la carpeta db.
+    - Se recomienda importarlos usando MongoDB Compass y fijarse cuando se importen que los tipos de datos
+  son los correctos (los que aparecen en los respectivos schemas).
+    - Fijarse especialmente en que los Ids son Number.
