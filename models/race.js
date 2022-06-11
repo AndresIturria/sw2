@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
 const raceSchema = new Schema({
-	raceId: {type: Number, unique: true, required: true},
-	year: {type: Number, required: true},
-	round: {type: Number, required: true},
-	circuitId: {type: Number, required: true},
+	raceId: {type: String, unique: true, required: true},
+	year: {type: String, required: true},
+	round: {type: String, required: true},
+	circuitId: {type: String, required: true},
 	name: {type: String, required: true},
 	date: {type: String, required: true},
 	time: {type: String, required: true},
