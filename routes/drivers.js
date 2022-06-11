@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Driver = require('../models/driver');
-const Driver = require("../models/driver");
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
