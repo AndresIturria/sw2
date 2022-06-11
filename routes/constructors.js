@@ -48,7 +48,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:constructorId', function(req, res, next) {
-  Constructor.find({constructorId: req.params.constructorId.toString()}, {_id: 0}, function (err, constructor){
+  Constructor.find({constructorId: req.params.constructorId}, {_id: 0}, function (err, constructor){
 
     xml = json_to_xml(constructor)
 
@@ -81,4 +81,31 @@ router.post('/', function(req, res, next) {
 
   });
 });
+
+router.post('/', function(req, res, next) {
+  Constructor.findOne().sort({constructorId: -1}).exec(function (err, result){
+    if (err){
+      res.render('error.njk')
+    }
+    let constructorId = result.constructorId + 1;
+    const newConstructor = new Constructor();
+    newConstructor.constructorId = constructorId;
+    newConstructor.constructorRef = req.body.constructorRef;
+    newConstructor.name = req.body.name;
+    newConstructor.nationality = req.body.nationality
+    newConstructor.save()
+    res.send(constructorId.toString())
+
+  });
+});
+
+router.put('/:constructorId', async function (req, res, next) {
+  const updateConstructor = await Constructor.findOne({constructorId: req.params.constructorId});
+  updateConstructor.constructorRef = req.body.constructorRef;
+  updateConstructor.name = req.body.name;
+  updateConstructor.nationality = req.body.nationality
+  updateConstructor.save()
+  res.sendStatus(200)
+});
+
 module.exports = router;

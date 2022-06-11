@@ -11,7 +11,8 @@ const qualifyingSchema = new Schema({
 	q1: String,
 	q2: String,
 	q3: String
-
+}, {
+	versionKey: false
 });
 
 module.exports = mongoose.model('qualifying', qualifyingSchema)

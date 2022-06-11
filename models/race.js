@@ -17,7 +17,8 @@ const raceSchema = new Schema({
 	fp3_time: String,
 	quali_date: String,
 	quali_time: String
-
+}, {
+	versionKey: false
 });
 
 module.exports = mongoose.model('race', raceSchema)

@@ -31,10 +31,11 @@ const constructorSchema = new Schema({
 			'Sri Lankan', 'Sudanese', 'Surinamer', 'Swazi', 'Swedish', 'Swiss', 'Syrian', 'Taiwanese', 'Tajik',
 			'Tanzanian', 'Thai', 'Togolese', 'Tongan', 'Trinidadian or Tobagonian', 'Tunisian', 'Turkish', 'Tuvaluan',
 			'Ugandan', 'Ukrainian', 'Uruguayan', 'Uzbekistani', 'Venezuelan', 'Vietnamese', 'Welsh', 'Yemenite',
-			'Zambian', 'Zimbabwean', 'Hong Kong', 'Rhodesian', 'East German']
+			'Zambian', 'Zimbabwean', 'Hong Kong', 'Rhodesian', 'East German']}
 
-	}
-
+	}, {
+	versionKey: false
 });
+
 
 module.exports = mongoose.model('constructor', constructorSchema)

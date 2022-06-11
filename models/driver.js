@@ -11,6 +11,8 @@ const driverSchema = new Schema({
 	dob: {type: String, required: true},
 	nationality: {type: String, required: true}
 
+}, {
+	versionKey: false
 });
 
 module.exports = mongoose.model('driver', driverSchema)

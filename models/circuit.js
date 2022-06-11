@@ -8,6 +8,8 @@ const circuitSchema = new Schema({
 	location: {type: String, required: true},
 	country: {type: String, required: true}
 
-});
+}, {
+		versionKey: false
+	});
 
 module.exports = mongoose.model('circuit', circuitSchema)
