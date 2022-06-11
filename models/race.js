@@ -2,13 +2,13 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
 const raceSchema = new Schema({
-	"raceId": Number,
-	year: Number,
-	round: Number,
-	circuitId: Number,
-	name: String,
-	date: String,
-	time: String,
+	raceId: {type: Number, unique: true, required: true},
+	year: {type: Number, required: true},
+	round: {type: Number, required: true},
+	circuitId: {type: Number, required: true},
+	name: {type: String, required: true},
+	date: {type: String, required: true},
+	time: {type: String, required: true},
 	fp1_date: String,
 	fp1_time: String,
 	fp2_date: String,

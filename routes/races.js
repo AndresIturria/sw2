@@ -1,9 +1,11 @@
 var express = require('express');
+const Race = require("../models/race");
 var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  Race.find({}, {_id: 0}, function (err, races){
+    res.json(races)
+  });
 });
-
 module.exports = router;
