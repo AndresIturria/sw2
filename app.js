@@ -22,7 +22,7 @@ var app = express();
 
 // view engine setup
 app.engine( 'html', nunjucks.render) ;
-app.set( 'view engine', 'html');
+app.set('view engine', 'html');
 
 nunjucks.configure(path.join(__dirname, '/views'), {
     autoescape: true,
