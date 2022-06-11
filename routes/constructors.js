@@ -82,23 +82,6 @@ router.post('/', function(req, res, next) {
   });
 });
 
-router.post('/', function(req, res, next) {
-  Constructor.findOne().sort({constructorId: -1}).exec(function (err, result){
-    if (err){
-      res.render('error.njk')
-    }
-    let constructorId = result.constructorId + 1;
-    const newConstructor = new Constructor();
-    newConstructor.constructorId = constructorId;
-    newConstructor.constructorRef = req.body.constructorRef;
-    newConstructor.name = req.body.name;
-    newConstructor.nationality = req.body.nationality
-    newConstructor.save()
-    res.send(constructorId.toString())
-
-  });
-});
-
 router.put('/:constructorId', async function (req, res, next) {
   const updateConstructor = await Constructor.findOne({constructorId: req.params.constructorId});
   updateConstructor.constructorRef = req.body.constructorRef;
