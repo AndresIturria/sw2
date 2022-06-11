@@ -1,6 +1,8 @@
 require('dotenv').config()
 const axios = require('axios');
 const API_KEY = process.env.API_KEY
+var xpath = require('xpath')
+var dom = require('xmldom').DOMParser
 
 async function weatherNow(place){
 
@@ -45,9 +47,12 @@ async function weatherHistory(place){
 
 weatherNow("Madrid").then(function (response) {
     // handle success
-    console.log(response);
+    console.log(response.temp_c);
 })
 weatherHistory("Madrid").then(function (response) {
     // handle success
-    console.log(response);
+    var xml = response.data;
+    var doc = new dom().parseFromString(xml);
+    var nodes = xpath.select("//forecast", doc);
+    console.log(nodes);
 })
