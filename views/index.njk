@@ -3,14 +3,14 @@
 {% block head %}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Adopción2</title>
+    <title>Formula1 Dabatase</title>
     <link rel="stylesheet" href="/stylesheets/drivers.css">
 
 {% endblock %}
 
 {% block nav %}
     <li class="nav-item">
-        <a class="nav-link" href="/">Drivers<span class="sr-only"></span></a>
+        <a class="nav-link" href="#">Drivers<span class="sr-only"></span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/constructors">Constructors</a>
@@ -37,49 +37,73 @@
             <form method="GET" action="#" id="get-driver">
                 <div class="modal-body">
                     <div class="mb-3">
-                    <label for="forename-input" class="form-label">Forename</label>
-                    <input type="text" class="form-control" name="forename" id="forename-input" "/> <br>
-                    <label for="surname-input" class="form-label">Surname</label>
-                    <input type="text" class="form-control" name="surname" id="surname-input" "/><br>
-                    <label for="number-input" class="form-label">Number</label>
-                    <input type="int" class="form-control" name="number" id="number-input"/>
+                    <label for="id-input" class="form-label">Id</label>
+                    <input type="int" class="form-control" name="id" id="id-input" "/><br>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <input type="submit" name="action" value="Get Driver" class="btn btn-primary"/>
                 </div>
             </form>
-            <div class="modal-footer">
-                <h2>Meter aqui el resultado del get</h2>
-            </div>
         </div>
     </div>
 
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Add/Delete/Update Drivers</h2>
+                <h2 class="modal-title">Add Driver</h2>
             </div>
             <form method="POST" action="#" id="post-driver">
                 <div class="modal-body">
                     <div class="mb-3">
-                    <label for="forename-input" class="form-label">Forename</label>
-                    <input type="text" class="form-control" name="forename" id="forename-input" "/><br>
-                    <label for="surname-input" class="form-label">Surname</label>
-                    <input type="text" class="form-control" name="surname" id="surname-input" "/><br>
-                    <label for="number-input" class="form-label">Number</label>
-                    <input type="int" class="form-control" name="number" id="number-input"/> 
+                    <label for="id-input" class="form-label">Id</label>
+                    <input type="int" class="form-control" name="id" id="id-input" "/><br>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <input type="submit" name="action" value="Add Driver" class="btn btn-primary"/> 
-                    <input type="submit" name="action" value="Delete Driver" class="btn btn-primary"/> 
-                    <input type="submit" name="action" value="Update Driver" class="btn btn-primary"/>
                 </div>
             </form>
         </div>
     </div>
 
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Delete Driver</h2>
+            </div>
+            <form method="POST" action="#" id="post-driver">
+                <div class="modal-body">
+                    <div class="mb-3">
+                    <label for="id-input" class="form-label">Id</label>
+                    <input type="int" class="form-control" name="id" id="id-input" "/><br>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" name="action" value="Delete Driver" class="btn btn-primary"/> 
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Update Driver</h2>
+            </div>
+            <form method="POST" action="#" id="post-driver">
+                <div class="modal-body">
+                    <div class="mb-3">
+                    <label for="id-input" class="form-label">Id</label>
+                    <input type="int" class="form-control" name="id" id="id-input" "/><br>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" name="action" value="Update Driver" class="btn btn-primary"/>
+                </div>
+            </form>
+        </div>
+    </div>
 {% endblock %}
 
 {% block footer %}
