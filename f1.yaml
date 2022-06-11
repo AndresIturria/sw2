@@ -1,0 +1,780 @@
+openapi: '3.0.3'
+info:
+  title: API Formula 1
+  version: '0.1.0'
+  description: |
+    # Título
+    Formula One API for SW2.  
+    
+    ## Subtítulo
+    Supports CRUD operations on all elements: circuits, drivers,
+    races, constructors.
+
+tags:
+  - name: circuit
+    description: Circuits
+  - name: driver
+    description: Drivers
+  - name: race
+    description: Races
+  - name: constructor
+    description: Constructors
+
+paths:
+  /circuits:
+    get:
+      summary: Returns every available circuit
+      description:
+        Returns every available circuit
+      operationId: getCircuits
+      tags:
+        - circuits
+      responses:
+        '200':
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/circuits'
+    post:
+      summary: Submits a new circuit
+      description: Submits a new circuit
+      operationId: createCircuit
+      tags:
+        - circuit
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/circuit'
+      responses:
+        '201':
+          description: Circuit submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/info_created'
+        default:
+          description: Error when submitting circuit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+
+  /circuits/{circuitId}:
+    get:
+      summary: Retrieves information from a specific circuit
+      description: Retrieves information from a specific circuit
+      operationId: getCircuit
+      tags:
+        - circuit
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/circuit'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/circuit'
+        default:
+          description: Error when retrieving circuit information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      parameters:
+        - $ref: '#/components/parameters/id'
+    put:
+      summary: Modify information of a specific circuit
+      description: Modify information of a specific circuit
+      operationId: updateCircuit
+      tags:
+        - circuit
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '201':
+          description: Ok
+        default:
+          description: Error when updating circuit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/circuit'
+    delete:
+      summary: Deletes a specific circuit
+      description: Deletes a specific circuit
+      operationId: deleteCircuit
+      tags:
+        - circuit
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: OK
+        default:
+          description: Error when deleting circuit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+  /drivers:
+    get:
+      summary: Returns every available driver
+      description:
+        Returns every available driver
+      operationId: getDrivers
+      tags:
+        - drivers
+      responses:
+        '200':
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/drivers'
+    post:
+      summary: Submits a new driver
+      description: Submits a new driver
+      operationId: createDriver
+      tags:
+        - drivers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/driver'
+      responses:
+        '201':
+          description: Driver submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/info_created'
+        default:
+          description: Error when submitting driver
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+
+  /drivers/{driverId}:
+    get:
+      summary: Retrieves information from a specific driver
+      description: Retrieves information from a specific driver
+      operationId: getDriver
+      tags:
+        - driver
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/driver'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/driver'
+        default:
+          description: Error when retrieving driver information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      parameters:
+        - $ref: '#/components/parameters/id'
+    put:
+      summary: Modify information of a specific driver
+      description: Modify information of a specific driver
+      operationId: updateDriver
+      tags:
+        - driver
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '201':
+          description: OK
+        default:
+          description: Error when updating driver
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/driver'
+    delete:
+      summary: Deletes a specific driver
+      description: Deletes a specific driver
+      operationId: deleteDriver
+      tags:
+        - driver
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: OK
+        default:
+          description: Error when deleting driver
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+  /races:
+    get:
+      summary: Returns every available race
+      description:
+        Returns every available race
+      operationId: getRaces
+      tags:
+        - races
+      responses:
+        '200':
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/races'
+    post:
+      summary: Submits a new race
+      description: Submits a new race
+      operationId: createRace
+      tags:
+        - race
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/race'
+      responses:
+        '201':
+          description: Race submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/info_created'
+        default:
+          description: Error when submitting race
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+
+  /races/{raceId}:
+    get:
+      summary: Retrieves information from a specific race
+      description: Retrieves information from a specific race
+      operationId: getRace
+      tags:
+        - race
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/race'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/race'
+        default:
+          description: Error when retrieving race information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      parameters:
+        - $ref: '#/components/parameters/id'
+    put:
+      summary: Modify information of a specific race
+      description: Modify information of a specific race
+      operationId: updateRace
+      tags:
+        - race
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '201':
+          description: OK
+        default:
+          description: Error when updating race
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/race'
+    delete:
+      summary: Deletes a specific race
+      description: Deletes a specific race
+      operationId: deleteRace
+      tags:
+        - race
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: OK
+        default:
+          description: Error when deleting race
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+  /constructors:
+    get:
+      summary: Returns every available constructor
+      description:
+        Returns every available constructor
+      operationId: getConstructors
+      tags:
+        - constructors
+      responses:
+        '200':
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/constructors'
+    post:
+      summary: Submits a new constructor
+      description: Submits a new constructor
+      operationId: createConstructor
+      tags:
+        - constructor
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/constructor'
+      responses:
+        '201':
+          description: Constructor submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/info_created'
+        default:
+          description: Error when submitting constructor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+
+  /constructors/{constructorId}:
+    get:
+      summary: Retrieves information from a specific constructor
+      description: Retrieves information from a specific constructor
+      operationId: getConstructor
+      tags:
+        - constructor
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/constructor'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/constructor'
+        default:
+          description: Error when retrieving constructor information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      parameters:
+        - $ref: '#/components/parameters/id'
+    put:
+      summary: Modify information of a specific constructor
+      description: Modify information of a specific constructor
+      operationId: updateConstructors
+      tags:
+        - constructor
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '201':
+          description: OK
+        default:
+          description: Error when updating constructors
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/constructor'
+    delete:
+      summary: Deletes a specific constructor
+      description: Deletes a specific constructor
+      operationId: deleteConstructors
+      tags:
+        - constructor
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: OK
+        default:
+          description: Error when deleting constructor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+
+  /qualifying:
+    get:
+      summary: Returns every available qualifying
+      description:
+        Returns every available race result
+      operationId: getQualifying
+      tags:
+        - qualifying
+      responses:
+        '200':
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/qualifyings'
+    post:
+      summary: Submits a new qualifying
+      description: Submits a new qualifying
+      operationId: createQualifying
+      tags:
+        - qualifying
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/qualifying'
+      responses:
+        '201':
+          description: qualifying submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/info_created'
+        default:
+          description: Error when submitting qualifying
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+
+  /qualifying/{qualifyingId}:
+    get:
+      summary: Retrieves information from a specific qualifying
+      description: Retrieves information from a specific qualifying
+      operationId: getQualifying
+      tags:
+        - qualifying
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/qualifying'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/qualifying'
+        default:
+          description: Error when retrieving qualifying information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      parameters:
+        - $ref: '#/components/parameters/id'
+    put:
+      summary: Modify information of a specific qualifying
+      description: Modify information of a specific qualifying
+      operationId: updateQualifying
+      tags:
+        - qualifying
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '201':
+          description: OK
+        default:
+          description: Error when updating qualifying
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/qualifying'
+    delete:
+      summary: Deletes a specific qualifying
+      description: Deletes a specific qualifying
+      operationId: deleteQualifying
+      tags:
+        - qualifying
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: OK
+        default:
+          description: Error when deleting qualifying
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+
+components:
+  parameters:
+    id:
+      name: id
+      in: path
+      description: Element ID
+      required: true
+      schema:
+        $ref: '#/components/schemas/id'
+  schemas:
+    id:
+      type: integer
+      minimum: 1
+    error:
+      type: object
+      properties:
+        descripcion:
+          type: string
+        codigo:
+          type: integer
+      example: {
+        "descripcion": "Wrong data",
+        "codigo": 400}
+    info_created:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/id'
+      example: {"id": 1}
+    circuits:
+      type: array
+      items:
+        $ref: '#/components/schemas/circuit'
+
+    circuit:
+      type: object
+      additionalProperties: false
+      minProperties: 1
+      required:
+          - circuitRef
+          - name
+          - location
+          - country
+      properties:
+        circuitRef:
+          type: string
+        name:
+          type: string
+        location:
+          type: string
+        country:
+          type: string
+      example:
+        {
+        "circuitRef": "albert_park",
+        "name": "Albert Park Grand Prix Circuit",
+        "location": "Melbourne",
+        "country": "Australia"
+      }
+    drivers:
+      type: array
+      items:
+        $ref: '#/components/schemas/driver'
+    driver:
+      type: object
+      additionalProperties: false
+      minProperties: 1
+      required:
+          - driverRef
+          - number
+          - code
+          - forename
+          - surname
+          - dob
+          - nationality
+      properties:
+        driverRef:
+          type: string
+        number:
+          type: integer
+        code:
+          type: string
+        forename:
+          type: string
+        surname:
+          type: string
+        dob:
+          type: string
+        nationality:
+          type: string
+      example:
+        {
+        "driverRef": "hamilton",
+        "number": 44,
+        "code": "HAM",
+        "forename": "Lewis",
+        "surname": "Hamilton",
+        "dob": "1985-01-07",
+        "nationality": "British"
+      }
+    races:
+      type: array
+      items:
+        $ref: '#/components/schemas/race'
+    race:
+      type: object
+      additionalProperties: false
+      minProperties: 1
+      required:
+          - year
+          - round
+          - circuitId
+          - name
+          - date
+          - time
+      properties:
+        year:
+          type: integer
+        round:
+          type: integer
+        circuitId:
+          type: integer
+        name:
+          type: string
+        date:
+          type: string
+        time:
+          type: string
+        fp1_date:
+          type: string
+        fp1_time:
+          type: string
+        fp2_date:
+          type: string
+        fp2_time:
+          type: string
+        fp3_date:
+          type: string
+        fp3_time:
+          type: string
+        quali_date:
+          type: string
+        quali_time:
+          type: string
+      example:
+        {
+        "year": 2009,
+        "round": 1,
+        "circuitId": 1,
+        "name": "Australian Grand Prix",
+        "date": "2009-03-29",
+        "time": "06:00:00",
+        "fp1_date": "\\N",
+        "fp1_time": "\\N",
+        "fp2_date": "\\N",
+        "fp2_time": "\\N",
+        "fp3_date": "\\N",
+        "fp3_time": "\\N",
+        "quali_date": "\\N",
+        "quali_time": "\\N"
+      }
+    constructors:
+      type: array
+      items:
+        $ref: '#/components/schemas/constructor'
+    constructor:
+      type: object
+      additionalProperties: false
+      minProperties: 1
+      required:
+          - constructorRef
+          - name
+          - nationality
+      properties:
+        constructorRef:
+          type: string
+        name:
+          type: string
+        nationality:
+          type: string
+      example:
+        {
+        "constructorRef": "mclaren",
+        "name": "McLaren",
+        "nationality": "British"
+      }
+    qualifyings:
+      type: array
+      items:
+        $ref: '#/components/schemas/qualifying'
+    qualifying:
+      type: object
+      additionalProperties: false
+      minProperties: 1
+      required:
+          - raceId
+          - driverId
+          - constructorId
+          - number
+          - position
+      properties:
+        raceId:
+          type: integer
+        driverId:
+          type: integer
+        constructorId:
+          type: integer
+        number:
+          type: integer
+        position:
+          type: integer
+        q1:
+          type: string
+        q2:
+          type: string
+        q3:
+          type: string    
+      example:
+        {
+        "raceId": 18,
+        "driverId": 1,
+        "constructorId": 1,
+        "number": 22,
+        "position": 1,
+        "q1": "1:26.572",
+        "q2": "1:25.187",
+        "q3": "1:26.714"
+      }
+
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: 
+  - description: 
+    url: /api/v1
