@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
 const constructorSchema = new Schema({
-	constructorId: Number,
-	constructorRef: String,
-	name: String,
-	nationality: String
+	constructorId: {type: Number, unique: true, required: true},
+	constructorRef: {type: String, unique: true, required: true},
+	name: {type: String, unique: true, required: true},
+	nationality: {type: String, required: true}
 
 });
 
