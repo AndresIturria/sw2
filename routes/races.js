@@ -47,4 +47,25 @@ router.post('/', function(req, res, next) {
   });
 });
 
+router.put('/:raceId', async function (req, res, next) {
+  const updateRace = await Race.findOne({raceId: req.params.raceId});
+  updateRace.year = req.body.year;
+  updateRace.round = req.body.round;
+  updateRace.circuitId = req.body.circuitId;
+  updateRace.name = req.body.name;
+  updateRace.date = req.body.date;
+  updateRace.time = req.body.time;
+  updateRace.fp1_date = req.body.fp1_date;
+  updateRace.fp1_time = req.body.fp1_time;
+  updateRace.fp2_date = req.body.fp2_date;
+  updateRace.fp2_time = req.body.fp2_time;
+  updateRace.fp3_date = req.body.fp3_date;
+  updateRace.fp3_time = req.body.fp3_time;
+  updateRace.quali_date = req.body.quali_date;
+  updateRace.quali_time = req.body.quali_time;
+
+  updateRace.save()
+  res.sendStatus(200)
+});
+
 module.exports = router;
