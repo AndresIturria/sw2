@@ -1,6 +1,5 @@
 var express = require('express');
 const Race = require("../models/race");
-const Constructor = require("../models/constructor");
 var router = express.Router();
 
 //getRaces
