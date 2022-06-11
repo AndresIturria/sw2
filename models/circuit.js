@@ -2,11 +2,11 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
 const circuitSchema = new Schema({
-	circuitId: Number,
-	circuitRef: String,
-	name: String,
-	location: String,
-	country: String
+	circuitId: {type: Number, unique: true, required: true},
+	circuitRef: {type: String, unique: true, required: true},
+	name: {type: String, unique: true, required: true},
+	location: {type: String, required: true},
+	country: {type: String, required: true}
 
 });
 
