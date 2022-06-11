@@ -2,12 +2,12 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
 const qualifyingSchema = new Schema({
-	qualifyId: Number,
-	raceId: Number,
-	driverId: Number,
-	constructorId: Number,
-	number: Number,
-	position: Number,
+	qualifyId: {type: Number, unique: true, required: true},
+	raceId: {type: Number, required: true},
+	driverId: {type: Number, required: true},
+	constructorId: {type: Number, required: true},
+	number: {type: Number, required: true},
+	position: {type: Number, required: true},
 	q1: String,
 	q2: String,
 	q3: String

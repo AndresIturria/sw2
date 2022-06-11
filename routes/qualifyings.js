@@ -1,9 +1,12 @@
 var express = require('express');
+const Qualifying = require("../models/qualifying");
 var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  Qualifying.find({}, {_id: 0}, function (err, qualifyings){
+    res.json(qualifyings)
+  });
 });
 
 module.exports = router;
