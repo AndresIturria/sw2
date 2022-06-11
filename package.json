@@ -16,6 +16,7 @@
     "mongoose": "^6.3.4",
     "morgan": "~1.9.1",
     "nunjucks": "^3.2.3",
+    "xml2js": "^0.4.23",
     "xsd-schema-validator": "^0.7.0"
   }
 }
