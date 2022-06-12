@@ -3,7 +3,7 @@ const axios = require('axios');
 const API_KEY = process.env.API_KEY
 var xpath = require('xpath')
 var dom = require('xmldom').DOMParser
-
+console.log(API_KEY)
 async function weatherNow(place){
 
     try{
@@ -56,5 +56,3 @@ weatherHistory("Madrid").then(function (response) {
     var nodes = xpath.select("//forecast", doc);
     console.log(nodes);
 })
-
-module.exports = {weatherNow};

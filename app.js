@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const nunjucks = require('nunjucks');
 const morgan = require('morgan');
-
+const dotenv = require('dotenv');
 //Initializations
 require('./database');
 

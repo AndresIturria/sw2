@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const axios = require('axios');
+const dotenv = require('dotenv');
+dotenv.config({ path: '../.env' });
+const API_KEY = process.env.API_KEY
 
 async function weatherNow(place){
 
@@ -39,18 +42,22 @@ router.post('/', async function (req, res, next) {
         if (req.body.circuitId == ""){
             try {
                 const consulta = await axios.get('http://localhost:3000/circuits')
-                res.render('get_circuits_front.njk', {data: circuits,temperatura:temperatura});
+                let circuits = consulta.data
+                res.render('get_circuits_front.njk', {data: circuits});
             } catch (error) {
                 console.error(error);
             }
         }
         // drivers-get con id ---------------------------------------------
         else if (req.body.circuitId){
+
             try {
                 let urlString = `http://localhost:3000/circuits/${req.body.circuitId}`
                 const consulta = await axios.get(urlString)
-                races = consulta.data
-                res.render('get_circuits_front.njk', {data: raccircuitss});
+                let circuits = consulta.data
+                let temperaturaJson = await weatherNow(circuits[0].location);
+                let temperatura = temperaturaJson.temp_c
+                res.render('get_circuits_front.njk', {data: circuits, temperatura: temperatura});
             } catch (error) {
                 console.error(error);
             }
