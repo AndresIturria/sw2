@@ -41,7 +41,7 @@ router.post('/', async function (req, res, next) {
                 q3: req.body.q3,
             };
             const consulta = await axios.post(urlString, qualifyingJson)
-            res.send("<p>Qualifying added</p> </p><a href='/'>Go Back</a>");
+            res.send("<p>Qualifying added</p> </p><a href='/qualifying_front'>Go Back</a>");
         } catch (error) {
             console.error(error);
         }
@@ -61,7 +61,7 @@ router.post('/', async function (req, res, next) {
         };
         try {
             const consulta = await axios.put(urlString, qualifyingJson)
-            res.send("<p>Qualifying updated<p></p><a href='/'>Go Back</a>");
+            res.send("<p>Qualifying updated<p></p><a href='/qualifying_front'>Go Back</a>");
         } catch (error) {
             console.error(error);
     }

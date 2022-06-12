@@ -38,7 +38,7 @@ router.post('/', async function (req, res, next) {
                 country: req.body.country
             };
             const consulta = await axios.post(urlString, circuitJson)
-            res.send("<p>Circuit added</p> </p><a href='/races_front'>Go Back</a>");
+            res.send("<p>Circuit added</p> </p><a href='/circuits_front'>Go Back</a>");
         } catch (error) {
             console.error(error);
         }
@@ -55,7 +55,7 @@ router.post('/', async function (req, res, next) {
         };
         try {
             const consulta = await axios.put(urlString, circuitJson)
-            res.send("<p>Circuit updated<p></p><a href='/races_front'>Go Back</a>");
+            res.send("<p>Circuit updated<p></p><a href='/circuits_front'>Go Back</a>");
         } catch (error) {
             console.error(error);
         }
