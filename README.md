@@ -8,7 +8,7 @@ Cristina Abdul-Massih
 
 ## Instrucciones
 
-- Crear en la carpeta root del proyecto un fichero .env con el contenido: API_KEY="api_key de weatherapi".
+- Crear en la carpeta root del proyecto un fichero .env con el contenido: API_KEY="api_key de weatherapi". ver https://www.weatherapi.com/
 - Para validar XML se usa una libreria que depende de Java, tiene que estar Java instalado y la variable de entorno
 JAVA_HOME tiene que estar configurada en el equipo.
 - Recrear la base de datos:  
