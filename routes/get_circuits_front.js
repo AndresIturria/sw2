@@ -2,6 +2,36 @@ var express = require('express');
 var router = express.Router();
 const axios = require('axios');
 
+async function weatherNow(place){
+
+    try{
+        const res = await axios.get('http://api.weatherapi.com/v1/current.json',
+            { params: { key: API_KEY, q: place } })
+        return(res.data.current)
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function weatherHistory(place){
+    let queryDate = new Date()
+    console.log(queryDate)
+    queryDate.setDate(queryDate.getDate()-1);
+    let year = queryDate.getFullYear();
+    let month = queryDate.getMonth()+1;
+    let day = queryDate.getDate();
+    formattedDate = ""+year+"-"+month+"-"+day
+
+    try{
+        const res = await axios.get('http://api.weatherapi.com/v1/history.xml',
+            { params: { key: API_KEY, q: place, dt: formattedDate } })
+        return(res)
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+
 /* GET users listing. */
 router.post('/', async function (req, res, next) {
 // races-get ---------------------------------------------------------------------------
@@ -9,8 +39,7 @@ router.post('/', async function (req, res, next) {
         if (req.body.circuitId == ""){
             try {
                 const consulta = await axios.get('http://localhost:3000/circuits')
-                circuits = consulta.data
-                res.render('get_circuits_front.njk', {data: circuits});
+                res.render('get_circuits_front.njk', {data: circuits,temperatura:temperatura});
             } catch (error) {
                 console.error(error);
             }

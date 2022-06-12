@@ -56,3 +56,5 @@ weatherHistory("Madrid").then(function (response) {
     var nodes = xpath.select("//forecast", doc);
     console.log(nodes);
 })
+
+module.exports = {weatherNow};
