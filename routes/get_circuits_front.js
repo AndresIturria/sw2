@@ -4,6 +4,9 @@ const axios = require('axios');
 const dotenv = require('dotenv');
 dotenv.config({ path: '../.env' });
 const API_KEY = process.env.API_KEY
+var xpath = require('xpath')
+var dom = require('xmldom').DOMParser
+
 
 async function weatherNow(place){
 
@@ -19,15 +22,18 @@ async function weatherNow(place){
 async function weatherHistory(place){
     let queryDate = new Date()
     console.log(queryDate)
-    queryDate.setDate(queryDate.getDate()-1);
-    let year = queryDate.getFullYear();
-    let month = queryDate.getMonth()+1;
-    let day = queryDate.getDate();
-    formattedDate = ""+year+"-"+month+"-"+day
+    //en caso de querer en el futuro preguntar por otros dias.
+    /*    queryDate.setDate(queryDate.getDate()-1);
+        let year = queryDate.getFullYear();
+        let month = queryDate.getMonth()+1;
+        let day = queryDate.getDate();
+        formattedDate = ""+year+"-"+month+"-"+day*/
 
     try{
         const res = await axios.get('http://api.weatherapi.com/v1/history.xml',
-            { params: { key: API_KEY, q: place, dt: formattedDate } })
+            { params: { key: API_KEY, q: place, dt: queryDate } })
+
+
         return(res)
     } catch (error) {
         console.error(error);
@@ -52,12 +58,27 @@ router.post('/', async function (req, res, next) {
         else if (req.body.circuitId){
 
             try {
+
                 let urlString = `http://localhost:3000/circuits/${req.body.circuitId}`
                 const consulta = await axios.get(urlString)
                 let circuits = consulta.data
+                //api externa
+                //json
                 let temperaturaJson = await weatherNow(circuits[0].location);
                 let temperatura = temperaturaJson.temp_c
-                res.render('get_circuits_front.njk', {conditional: true, data: circuits, temperatura: temperatura});
+                //xml
+                let consultaxml = await weatherHistory(circuits[0].location);
+                let xml = consultaxml.data
+                var doc = new dom().parseFromString(xml);
+                var nodes = xpath.select("//maxtemp_c/text()", doc);
+                var nodes2 = xpath.select("//mintemp_c/text()", doc);
+                max_min = {
+                    max: nodes[0].toString(),
+                    min: nodes2[0].toString()
+                }
+
+
+                res.render('get_circuits_front.njk', {conditional: true, data: circuits, temperatura: temperatura, max_min: max_min});
             } catch (error) {
                 console.error(error);
             }

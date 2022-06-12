@@ -18,15 +18,16 @@ async function weatherNow(place){
 async function weatherHistory(place){
     let queryDate = new Date()
     console.log(queryDate)
-    queryDate.setDate(queryDate.getDate()-1);
+    //en caso de querer en el futuro preguntar por otros dias.
+/*    queryDate.setDate(queryDate.getDate()-1);
     let year = queryDate.getFullYear();
     let month = queryDate.getMonth()+1;
     let day = queryDate.getDate();
-    formattedDate = ""+year+"-"+month+"-"+day
+    formattedDate = ""+year+"-"+month+"-"+day*/
 
     try{
         const res = await axios.get('http://api.weatherapi.com/v1/history.xml',
-            { params: { key: API_KEY, q: place, dt: formattedDate } })
+            { params: { key: API_KEY, q: place, dt: queryDate } })
         return(res)
     } catch (error) {
         console.error(error);
@@ -53,6 +54,8 @@ weatherHistory("Madrid").then(function (response) {
     // handle success
     var xml = response.data;
     var doc = new dom().parseFromString(xml);
-    var nodes = xpath.select("//forecast", doc);
-    console.log(nodes);
+    var nodes = xpath.select("//maxtemp_c/text()", doc);
+    var nodes2 = xpath.select("//mintemp_c/text()", doc)
+    console.log(nodes[0].toString());
+    console.log(nodes2[0].toString());
 })
