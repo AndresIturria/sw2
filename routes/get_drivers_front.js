@@ -19,7 +19,6 @@ router.post('/', async function (req, res, next) {
         else if (req.body.id){
             try {
                 let urlString = `http://localhost:3000/drivers/${req.body.id}`
-                console.log(urlString)
                 const consulta = await axios.get(urlString)
                 drivers = consulta.data
                 res.render('get_drivers_front.njk', {data: drivers});
@@ -28,7 +27,25 @@ router.post('/', async function (req, res, next) {
             }
         }
     }
-   // else if (req.body.formInstance ==)
+    else if (req.body.formInstance == "post"){ //--------post-------------------------------------
+        try {
+            let urlString = `http://localhost:3000/drivers/`
+            driverJson = {
+                driverRef: req.body.driverRef,
+                number: req.body.number,
+                code: req.body.code,
+                forename: req.body.forename,
+                surname: req.body.surname,
+                dob: req.body.dob,
+                nationality: req.body.nationality
+            };
+            const consulta = await axios.post(urlString, driverJson)
+            res.sendStatus(200)
+        } catch (error) {
+            console.error(error);
+        }
+
+    }
 
 
 });

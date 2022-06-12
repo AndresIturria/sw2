@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const driverSchema = new Schema({
 	driverId: {type: Number, unique: true, required: true},
-	driverRef: {type: Number, unique: true, required: true},
+	driverRef: {type: String, unique: true, required: true},
 	number: {type: Number, required: true},
 	code: {type: String, required: true},
 	forename: {type: String, required: true},
