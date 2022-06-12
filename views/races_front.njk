@@ -1,0 +1,146 @@
+{% extends "layoutNav.njk" %}
+
+{% block head %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Formula1 Dabatase</title>
+    <link rel="stylesheet" href="/stylesheets/drivers.css">
+
+{% endblock %}
+
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="/">Drivers<span class="sr-only"></span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/constructors">Constructors</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/circuits">Circuits</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Races</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/qualifying">Qualifying</a>
+    </li>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Search Races</h2>
+            </div>
+            <form method="POST" action="/get_races_front" id="get-races">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="id-input" class="form-label">Id</label>
+                        <input type="int" class="form-control" name="raceId" id="id-input" /><br>
+                        <input type="hidden" name="formInstance" value="get" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" name="action" value="Get Race" class="btn btn-primary"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Add Race</h2>
+            </div>
+            <form method="POST" action="get_races_front" id="post-races">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="year-input" class="form-label">Year</label>
+                        <input type="int" class="form-control" name="year" id="year-input" /><br>
+                        <label for="round-input" class="form-label">Round</label>
+                        <input type="int" class="form-control" name="round" id="round-input" /><br>
+                        <label for="circuitId-input" class="form-label">Circuit Id</label>
+                        <input type="string" class="form-control" name="circuitId" id="circuitId-input" /><br>
+                        <label for="name-input" class="form-label">Name</label>
+                        <input type="string" class="form-control" name="name" id="name-input" /><br>
+                        <label for="date-input" class="form-label">Date</label>
+                        <input type="string" class="form-control" name="date" id="date-input" /><br>
+                        <label for="time-input" class="form-label">Time</label>
+                        <input type="string" class="form-control" name="time" id="time-input" /><br>
+                        <label for="fp1_date-input" class="form-label">Fp1 Date</label>
+                        <input type="string" class="form-control" name="fp1_date" id="fp1_date-input" /><br>
+                        <label for="fp1_time-input" class="form-label">Fp1 Time</label>
+                        <input type="string" class="form-control" name="fp1_time" id="fp1_time-input" /><br>
+                        <label for="fp2_date-input" class="form-label">Fp2 Date</label>
+                        <input type="string" class="form-control" name="fp2_date" id="fp2_date-input" /><br>
+                        <label for="fp2_time-input" class="form-label">Fp2 Time</label>
+                        <input type="string" class="form-control" name="fp2_time" id="fp2_time-input" /><br>
+                        <label for="fp3_date-input" class="form-label">Fp3 Date</label>
+                        <input type="string" class="form-control" name="fp3_date" id="fp3_date-input" /><br>
+                        <label for="fp3_time-input" class="form-label">Fp3 Time</label>
+                        <input type="string" class="form-control" name="fp3_time" id="fp3_time-input" /><br>
+                        <label for="quali_date-input" class="form-label">Quali Date</label>
+                        <input type="string" class="form-control" name="quali_date" id="quali_date-input" /><br>
+                        <label for="quali_time-input" class="form-label">Quali Time</label>
+                        <input type="string" class="form-control" name="quali_time" id="quali_time-input" /><br>
+                        <input type="hidden" name="formInstance" value="post" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" name="action" value="Add Race" class="btn btn-primary"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Update Race</h2>
+            </div>
+            <form method="POST" action="/get_races_front" id="post-race">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="year-input" class="form-label">Year</label>
+                        <input type="int" class="form-control" name="year" id="year-input" /><br>
+                        <label for="round-input" class="form-label">Round</label>
+                        <input type="int" class="form-control" name="round" id="round-input" /><br>
+                        <label for="circuitId-input" class="form-label">Circuit Id</label>
+                        <input type="string" class="form-control" name="circuitId" id="circuitId-input" /><br>
+                        <label for="name-input" class="form-label">Name</label>
+                        <input type="string" class="form-control" name="name" id="name-input" /><br>
+                        <label for="date-input" class="form-label">Date</label>
+                        <input type="string" class="form-control" name="date" id="date-input" /><br>
+                        <label for="time-input" class="form-label">Time</label>
+                        <input type="string" class="form-control" name="time" id="time-input" /><br>
+                        <label for="fp1_date-input" class="form-label">Fp1 Date</label>
+                        <input type="string" class="form-control" name="fp1_date" id="fp1_date-input" /><br>
+                        <label for="fp1_time-input" class="form-label">Fp1 Time</label>
+                        <input type="string" class="form-control" name="fp1_time" id="fp1_time-input" /><br>
+                        <label for="fp2_date-input" class="form-label">Fp2 Date</label>
+                        <input type="string" class="form-control" name="fp2_date" id="fp2_date-input" /><br>
+                        <label for="fp2_time-input" class="form-label">Fp2 Time</label>
+                        <input type="string" class="form-control" name="fp2_time" id="fp2_time-input" /><br>
+                        <label for="fp3_date-input" class="form-label">Fp3 Date</label>
+                        <input type="string" class="form-control" name="fp3_date" id="fp3_date-input" /><br>
+                        <label for="fp3_time-input" class="form-label">Fp3 Time</label>
+                        <input type="string" class="form-control" name="fp3_time" id="fp3_time-input" /><br>
+                        <label for="quali_date-input" class="form-label">Quali Date</label>
+                        <input type="string" class="form-control" name="quali_date" id="quali_date-input" /><br>
+                        <label for="quali_time-input" class="form-label">Quali Time</label>
+                        <input type="string" class="form-control" name="quali_time" id="quali_time-input" /><br>
+                        <input type="hidden" name="formInstance" value="put" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" name="action" value="Update Race" class="btn btn-primary"/>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

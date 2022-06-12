@@ -10,7 +10,7 @@
 
 {% block nav %}
     <li class="nav-item">
-        <a class="nav-link" href="#">Drivers<span class="sr-only"></span></a>
+        <a class="nav-link" href="/">Drivers<span class="sr-only"></span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/constructors">Constructors</a>
@@ -29,20 +29,30 @@
 
 {% block content %}
 
-  {% for driver in data %}
+  {% for races in data %}
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
 
-            <h2 class="modal-title">{{ driver.surname }}</h2>
+            <h2 class="modal-title">{{ races.name }}</h2>
           </div>
         <div class="modal-body">
           <dl>
-            <dt>Id: {{driver.driverId}}</dt>
-            <dt>Number: {{driver.number}}</dt>
-            <dt>Code: {{driver.code}}</dt>
-            <dt>Forename: {{driver.forename}}</dt>
-            <dt>Surnmane: {{driver.surname}}</dt>
-            <dt>Nationality: {{driver.nationality}}</dt>
+
+                <dt>Id: {{races.raceId}}</dt>
+                <dt>Year: {{races.year}}</dt>
+                <dt>Round: {{races.round}}</dt>
+                <dt>CircuitId: {{races.circuitId}}</dt>
+                <dt>Date: {{races.date}}</dt>
+                <dt>Time: {{races.time}}</dt>
+                  <dt>Fp1 Date: {{races.fp1_date}}</dt>
+                  <dt>Fp1 Time: {{races.fp1_time}}</dt>
+                  <dt>Fp2 Date: {{races.fp2_date}}</dt>
+                  <dt>Fp2 Time: {{races.fp2_time}}</dt>
+                  <dt>Fp3 Date: {{races.fp3_date}}</dt>
+                  <dt>Fp3 Time: {{races.fp3_time}}</dt>
+                  <dt>Quali Date: {{races.quali_date}}</dt>
+                  <dt>Quali Time: {{races.quali_time}}</dt>
+
           </dl>
         </div>
     </div>

@@ -14,9 +14,11 @@ var indexRouter = require('./routes/index');
 var circuitsRouter = require('./routes/circuits');
 var constructorsRouter = require('./routes/constructors');
 var driversRouter = require('./routes/drivers');
-var qualifyingsRouter = require('./routes/qualifyings');
 var racesRouter = require('./routes/races');
+var qualifyingsRouter = require('./routes/qualifyings');
+var races_frontRouter = require('./routes/races_front');
 var get_drivers_frontRouter = require('./routes/get_drivers_front');
+var get_races_frontRouter = require('./routes/get_races_front');
 
 
 var app = express();
@@ -43,9 +45,11 @@ app.use('/', indexRouter);
 app.use('/circuits', circuitsRouter);
 app.use('/constructors', constructorsRouter);
 app.use('/drivers', driversRouter);
-app.use('/qualifyings', qualifyingsRouter);
 app.use('/races', racesRouter);
+app.use('/qualifyings', qualifyingsRouter);
+app.use('/races_front', races_frontRouter);
 app.use('/get_drivers_front', get_drivers_frontRouter);
+app.use('/get_races_front', get_races_frontRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
