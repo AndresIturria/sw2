@@ -1,6 +1,54 @@
+{% extends "layoutNav.njk" %}
 
-{% for driver in data %}
-    <p>{{driver.driverId}}</p>
-    <p>{{ driver.surname }}</p>
-    <p>poner el resto de datos</p>
-{%- endfor %}
+{% block head %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Formula1 Dabatase</title>
+    <link rel="stylesheet" href="/stylesheets/drivers.css">
+
+{% endblock %}
+
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="#">Drivers<span class="sr-only"></span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/constructors">Constructors</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/circuits">Circuits</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/races">Races</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/qualifying">Qualifying</a>
+    </li>
+
+{% endblock %}
+
+{% block content %}
+
+  {% for driver in data %}
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          {% for driver in data %}
+            <h2 class="modal-title">{{ driver.surname }}</h2>
+          </div>
+        <div class="modal-body">
+          <dl>
+            <dt>Id: {{driver.driverId}}</dt>
+            <dt>Id: {{driver.number}}</dt>
+            <dt>Code: {{driver.code}}</dt>
+            <dt>Forename: {{driver.forename}}</dt>
+            <dt>Surnmane: {{driver.surname}}</dt>
+            <dt>Nationality: {{driver.nationality}}</dt>
+          </dl>
+        </div>
+    </div>
+  {%- endfor %}
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
