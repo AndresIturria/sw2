@@ -4,6 +4,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+  res.render('circuits.njk')
   Circuit.find({}, {_id: 0}, function (err, circuits){
     res.json(circuits);
   });
