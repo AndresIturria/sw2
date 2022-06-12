@@ -4,7 +4,7 @@ const axios = require('axios');
 
 /* GET users listing. */
 router.post('/', async function (req, res, next) {
-
+// drivers-get ---------------------------------------------------------------------------
     if (req.body.formInstance == "get") {
         if (req.body.id == ""){
             try {
@@ -15,6 +15,7 @@ router.post('/', async function (req, res, next) {
                 console.error(error);
             }
         }
+        // drivers-get con id ---------------------------------------------
         else if (req.body.id){
             try {
                 let urlString = `http://localhost:3000/drivers/${req.body.id}`
@@ -27,6 +28,7 @@ router.post('/', async function (req, res, next) {
             }
         }
     }
+   // else if (req.body.formInstance ==)
 
 
 });
