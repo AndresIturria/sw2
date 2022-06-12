@@ -344,8 +344,8 @@ paths:
       responses:
         '200':
           description: OK
-          content: 
-            application/json:
+          content:
+            application/xml:
               schema:
                 $ref: '#/components/schemas/constructors'
     post:
@@ -384,9 +384,6 @@ paths:
         '200':
           description: OK
           content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/constructor'
             application/xml:
               schema:
                 $ref: '#/components/schemas/constructor'
@@ -443,7 +440,7 @@ paths:
       summary: Returns every available qualifying
       description:
         Returns every available race result
-      operationId: getQualifying
+      operationId: getQualifyings
       tags:
         - qualifying
       responses:
@@ -492,9 +489,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/qualifying'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/qualifying'
+
         default:
           description: Error when retrieving qualifying information
           content:
