@@ -38,7 +38,8 @@ router.post('/', function(req, res, next) {
 });
 
 router.put('/:driverId', async function (req, res, next) {
-  const updateDriver = await driver.findOne({driverId: req.params.driverId});
+  console.log((req.params.driverId))
+  const updateDriver = await Driver.findOne({driverId: req.params.driverId});
   updateDriver.driverRef = req.body.driverRef;
   updateDriver.number = req.body.number;
   updateDriver.code = req.body.code;

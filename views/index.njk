@@ -38,7 +38,7 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="id-input" class="form-label">Id</label>
-                        <input type="int" class="form-control" name="id" id="id-input" /><br>
+                        <input type="int" class="form-control" name="driverId" id="id-input" /><br>
                         <input type="hidden" name="formInstance" value="get" />
                     </div>
                 </div>
@@ -86,11 +86,11 @@
             <div class="modal-header">
                 <h2 class="modal-title">Update Driver</h2>
             </div>
-            <form method="POST" action="/index" id="post-driver">
+            <form method="POST" action="/get_drivers_front" id="post-driver">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="id-input" class="form-label">Id</label>
-                        <input type="int" class="form-control" name="id" id="id-input" /><br>
+                        <input type="int" class="form-control" name="driverId" id="id-input" /><br>
                         <label for="driverRef-input" class="form-label">Driver Ref</label>
                         <input type="string" class="form-control" name="driverRef" id="driverRef-input" /><br>
                         <label for="number-input" class="form-label">Number</label>
@@ -105,7 +105,7 @@
                         <input type="int" class="form-control" name="dob" id="dob-input" /><br>
                         <label for=nationality-input" class="form-label">Nationality</label>
                         <input type="string" class="form-control" name="nationality" id="nationality-input" /><br>
-                        <input type="hidden" name="formInstance" value="update" />
+                        <input type="hidden" name="formInstance" value="put" />
                     </div>
                 </div>
                 <div class="modal-footer">
