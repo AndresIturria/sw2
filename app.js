@@ -14,6 +14,7 @@ var indexRouter = require('./routes/index');
 var circuitsRouter = require('./routes/circuits');
 var circuits_frontRouter = require('./routes/circuits_front');
 var constructorsRouter = require('./routes/constructors');
+var constructors_frontRouter = require('./routes/constructors_front');
 var driversRouter = require('./routes/drivers');
 var racesRouter = require('./routes/races');
 var qualifyingsRouter = require('./routes/qualifyings');
@@ -23,6 +24,7 @@ var get_drivers_frontRouter = require('./routes/get_drivers_front');
 var get_races_frontRouter = require('./routes/get_races_front');
 var get_circuits_frontRouter = require('./routes/get_circuits_front');
 var get_qualifying_frontRouter = require('./routes/get_qualifying_front');
+var get_constructors_frontRouter = require('./routes/get_constructors_front');
 
 
 var app = express();
@@ -48,6 +50,7 @@ app.use(morgan(':method :url :status :response-time ms :body '));
 app.use('/', indexRouter);
 app.use('/circuits', circuitsRouter);
 app.use('/constructors', constructorsRouter);
+app.use('/constructors_front', constructors_frontRouter);
 app.use('/drivers', driversRouter);
 app.use('/races', racesRouter);
 app.use('/qualifyings', qualifyingsRouter);
@@ -58,6 +61,7 @@ app.use('/get_drivers_front', get_drivers_frontRouter);
 app.use('/get_races_front', get_races_frontRouter);
 app.use('/get_circuits_front', get_circuits_frontRouter);
 app.use('/get_qualifying_front', get_qualifying_frontRouter);
+app.use('/get_constructors_front', get_constructors_frontRouter);
 
 
 // catch 404 and forward to error handler
