@@ -34,11 +34,12 @@
             <div class="modal-header">
                 <h2 class="modal-title">Search Drivers</h2>
             </div>
-            <form method="GET" action="#" id="get-driver">
+            <form method="POST" action="/get_drivers_front" id="get-driver">
                 <div class="modal-body">
                     <div class="mb-3">
-                    <label for="id-input" class="form-label">Id</label>
-                    <input type="int" class="form-control" name="id" id="id-input" "/><br>
+                        <label for="id-input" class="form-label">Id</label>
+                        <input type="int" class="form-control" name="id" id="id-input" /><br>
+                        <input type="hidden" name="formInstance" value="get" />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -53,11 +54,12 @@
             <div class="modal-header">
                 <h2 class="modal-title">Add Driver</h2>
             </div>
-            <form method="POST" action="#" id="post-driver">
+            <form method="POST" action="get_drivers_front" id="post-driver">
                 <div class="modal-body">
                     <div class="mb-3">
-                    <label for="id-input" class="form-label">Id</label>
-                    <input type="int" class="form-control" name="id" id="id-input" "/><br>
+                        <label for="id-input" class="form-label">Id</label>
+                        <input type="int" class="form-control" name="id" id="id-input" /><br>
+                        <input type="hidden" name="formInstance" value="post" />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -72,11 +74,13 @@
             <div class="modal-header">
                 <h2 class="modal-title">Delete Driver</h2>
             </div>
-            <form method="POST" action="#" id="post-driver">
+            <form method="POST" action="get_drivers_front" id="post-driver">
                 <div class="modal-body">
                     <div class="mb-3">
-                    <label for="id-input" class="form-label">Id</label>
-                    <input type="int" class="form-control" name="id" id="id-input" "/><br>
+                        <label for="id-input" class="form-label">Id</label>
+                        <input type="int" class="form-control" name="id" id="id-input" /><br>
+                        <input type="hidden" name="formInstance" value="delete" />
+
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -91,11 +95,12 @@
             <div class="modal-header">
                 <h2 class="modal-title">Update Driver</h2>
             </div>
-            <form method="POST" action="#" id="post-driver">
+            <form method="POST" action="/index" id="post-driver">
                 <div class="modal-body">
                     <div class="mb-3">
-                    <label for="id-input" class="form-label">Id</label>
-                    <input type="int" class="form-control" name="id" id="id-input" "/><br>
+                        <label for="id-input" class="form-label">Id</label>
+                        <input type="int" class="form-control" name="id" id="id-input" /><br>
+                        <input type="hidden" name="formInstance" value="update" />
                     </div>
                 </div>
                 <div class="modal-footer">

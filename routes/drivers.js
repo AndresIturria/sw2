@@ -11,8 +11,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:driverId', function(req, res, next) {
-  Driver.find({driverId: req.params.driverId}, {_id: 0}, function (err, drivers){
-    res.json(drivers);
+  Driver.find({driverId: req.params.driverId}, {_id: 0}, function (err, driver){
+    res.json(driver);
   });
 });
 

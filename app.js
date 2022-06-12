@@ -16,6 +16,7 @@ var constructorsRouter = require('./routes/constructors');
 var driversRouter = require('./routes/drivers');
 var qualifyingsRouter = require('./routes/qualifyings');
 var racesRouter = require('./routes/races');
+var get_drivers_frontRouter = require('./routes/get_drivers_front');
 
 
 var app = express();
@@ -44,6 +45,7 @@ app.use('/constructors', constructorsRouter);
 app.use('/drivers', driversRouter);
 app.use('/qualifyings', qualifyingsRouter);
 app.use('/races', racesRouter);
+app.use('/get_drivers_front', get_drivers_frontRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
