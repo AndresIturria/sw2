@@ -10,7 +10,7 @@
 
 {% block nav %}
     <li class="nav-item">
-        <a class="nav-link" href="#">Drivers<span class="sr-only"></span></a>
+        <a class="nav-link" href="/">Drivers<span class="sr-only"></span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/constructors_front">Constructors</a>
@@ -29,20 +29,19 @@
 
 {% block content %}
 
-  {% for driver in data %}
+  {% for circuits in data %}
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
 
-            <h2 class="modal-title">{{ driver.surname }}</h2>
+            <h2 class="modal-title">{{ circuits.name }}</h2>
           </div>
         <div class="modal-body">
           <dl>
-            <dt>Id: {{driver.driverId}}</dt>
-            <dt>Number: {{driver.number}}</dt>
-            <dt>Code: {{driver.code}}</dt>
-            <dt>Forename: {{driver.forename}}</dt>
-            <dt>Surnmane: {{driver.surname}}</dt>
-            <dt>Nationality: {{driver.nationality}}</dt>
+            <dt>Id: {{circuits.circuitId}}</dt>
+            <dt>Circuit Ref: {{circuits.circuitRef}}</dt>
+            <dt>Name: {{circuits.name}}</dt>
+            <dt>Location: {{circuits.location}}</dt>
+            <dt>Country: {{circuits.country}}</dt>
           </dl>
         </div>
     </div>

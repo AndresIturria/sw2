@@ -8,7 +8,7 @@ router.post('/', async function (req, res, next) {
     if (req.body.formInstance == "get") {
         if (req.body.qualifyId == ""){
             try {
-                const consulta = await axios.get('http://localhost:3000/qualifying')
+                const consulta = await axios.get('http://localhost:3000/qualifyings')
                 qualifying = consulta.data
                 res.render('get_qualifying_front.njk', {data: qualifying});
             } catch (error) {
@@ -18,7 +18,7 @@ router.post('/', async function (req, res, next) {
         // drivers-get con id ---------------------------------------------
         else if (req.body.qualifyId){
             try {
-                let urlString = `http://localhost:3000/qualifying/${req.body.qualifyId}`
+                let urlString = `http://localhost:3000/qualifyings/${req.body.qualifyId}`
                 const consulta = await axios.get(urlString)
                 qualifying = consulta.data
                 res.render('get_qualifying_front.njk', {data: qualifying});
@@ -29,7 +29,7 @@ router.post('/', async function (req, res, next) {
     }
     else if (req.body.formInstance == "post"){ //--------post-------------------------------------
         try {
-            let urlString = 'http://localhost:3000/qualifying/'
+            let urlString = 'http://localhost:3000/qualifyings/'
             qualifyingJson = {
                 raceId: req.body.raceId,
                 driverId: req.body.driverId,
@@ -41,14 +41,14 @@ router.post('/', async function (req, res, next) {
                 q3: req.body.q3,
             };
             const consulta = await axios.post(urlString, qualifyingJson)
-            res.send("<p>Driver added</p> </p><a href='/'>Go Back</a>");
+            res.send("<p>Qualifying added</p> </p><a href='/'>Go Back</a>");
         } catch (error) {
             console.error(error);
         }
 
     }
     else if(req.body.formInstance == "put"){ // ----------------put---------------------------------
-        let urlString = `http://localhost:3000/qualifying/${req.body.qualifyId}`
+        let urlString = `http://localhost:3000/qualifyings/${req.body.qualifyId}`
         qualifyingJson = {
             raceId: req.body.raceId,
             driverId: req.body.driverId,
@@ -61,7 +61,7 @@ router.post('/', async function (req, res, next) {
         };
         try {
             const consulta = await axios.put(urlString, qualifyingJson)
-            res.send("<p>Driver updated<p></p><a href='/'>Go Back</a>");
+            res.send("<p>Qualifying updated<p></p><a href='/'>Go Back</a>");
         } catch (error) {
             console.error(error);
     }
