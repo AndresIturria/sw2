@@ -43,7 +43,7 @@ router.post('/', async function (req, res, next) {
             try {
                 const consulta = await axios.get('http://localhost:3000/circuits')
                 let circuits = consulta.data
-                res.render('get_circuits_front.njk', {data: circuits});
+                res.render('get_circuits_front.njk', {data: circuits, conditional: false,});
             } catch (error) {
                 console.error(error);
             }
@@ -57,7 +57,7 @@ router.post('/', async function (req, res, next) {
                 let circuits = consulta.data
                 let temperaturaJson = await weatherNow(circuits[0].location);
                 let temperatura = temperaturaJson.temp_c
-                res.render('get_circuits_front.njk', {data: circuits, temperatura: temperatura});
+                res.render('get_circuits_front.njk', {conditional: true, data: circuits, temperatura: temperatura});
             } catch (error) {
                 console.error(error);
             }

@@ -42,7 +42,9 @@
             <dt>Name: {{circuits.name}}</dt>
             <dt>Location: {{circuits.location}}</dt>
             <dt>Country: {{circuits.country}}</dt>
+              {% if conditional == true %}
               <dt>Temperatura actual: {{ temperatura }}</dt>
+              {% endif %}
           </dl>
         </div>
     </div>
