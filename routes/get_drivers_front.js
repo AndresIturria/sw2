@@ -40,7 +40,7 @@ router.post('/', async function (req, res, next) {
                 nationality: req.body.nationality
             };
             const consulta = await axios.post(urlString, driverJson)
-            res.sendStatus(200)
+            res.send("<a href='/'>Go Back</a>");
         } catch (error) {
             console.error(error);
         }
