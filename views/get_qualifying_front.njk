@@ -29,29 +29,23 @@
 
 {% block content %}
 
-  {% for races in data %}
+  {% for qualifying in data %}
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
 
-            <h2 class="modal-title">{{ races.name }}</h2>
+            <h2 class="modal-title">{{ qualifying.qualifyId }}</h2>
           </div>
         <div class="modal-body">
           <dl>
 
-                <dt>Id: {{races.raceId}}</dt>
-                <dt>Year: {{races.year}}</dt>
-                <dt>Round: {{races.round}}</dt>
-                <dt>CircuitId: {{races.circuitId}}</dt>
-                <dt>Date: {{races.date}}</dt>
-                <dt>Time: {{races.time}}</dt>
-                  <dt>Fp1 Date: {{races.fp1_date}}</dt>
-                  <dt>Fp1 Time: {{races.fp1_time}}</dt>
-                  <dt>Fp2 Date: {{races.fp2_date}}</dt>
-                  <dt>Fp2 Time: {{races.fp2_time}}</dt>
-                  <dt>Fp3 Date: {{races.fp3_date}}</dt>
-                  <dt>Fp3 Time: {{races.fp3_time}}</dt>
-                  <dt>Quali Date: {{races.quali_date}}</dt>
-                  <dt>Quali Time: {{races.quali_time}}</dt>
+                <dt>Race Id: {{qualifying.raceId}}</dt>
+                <dt>Driver Id: {{qualifying.driverId}}</dt>
+                <dt>Constructor Id: {{qualifying.constructorId}}</dt>
+                <dt>Number: {{qualifying.number}}</dt>
+                <dt>Position: {{qualifying.position}}</dt>
+                <dt>Q1 Time: {{qualifying.q1}}</dt>
+                <dt>Q2 Date: {{qualifying.q2}}</dt>
+                <dt>Q3 Time: {{qualifying.q3}}</dt>
 
           </dl>
         </div>

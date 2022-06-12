@@ -1,0 +1,124 @@
+{% extends "layoutNav.njk" %}
+
+{% block head %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Formula1 Dabatase</title>
+    <link rel="stylesheet" href="/stylesheets/drivers.css">
+
+{% endblock %}
+
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="/">Drivers<span class="sr-only"></span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/constructors_front">Constructors</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/circuits_front">Circuits</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/races_front">Races</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Qualifying</a>
+    </li>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Search Drivers</h2>
+            </div>
+            <form method="POST" action="/get_qualifying_front" id="get-driver">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="id-input" class="form-label">Id</label>
+                        <input type="int" class="form-control" name="qualifyId" id="id-input" /><br>
+                        <input type="hidden" name="formInstance" value="get" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" name="action" value="Get Driver" class="btn btn-primary"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Add Driver</h2>
+            </div>
+            <form method="POST" action="get_qualifying_front" id="post-driver">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="raceId-input" class="form-label">Race Id</label>
+                        <input type="int" class="form-control" name="raceId" id="raceId-input" /><br>
+                        <label for="driverId-input" class="form-label">Driver Id</label>
+                        <input type="int" class="form-control" name="driverId" id="driverId-input" /><br>
+                        <label for="constructorId-input" class="form-label">Constructor Id</label>
+                        <input type="int" class="form-control" name="constructorId" id="constructorId-input" /><br>
+                        <label for="number-input" class="form-label">Number</label>
+                        <input type="string" class="form-control" name="number" id="number-input" /><br>
+                        <label for="position-input" class="form-label">Position</label>
+                        <input type="int" class="form-control" name="position" id="position-input" /><br>
+                        <label for="q1-input" class="form-label">Q1</label>
+                        <input type="int" class="form-control" name="q1" id="q1-input" /><br>
+                        <label for="q2-input" class="form-label">Q2</label>
+                        <input type="int" class="form-control" name="q2" id="q2-input" /><br>
+                        <label for="q3-input" class="form-label">Q3</label>
+                        <input type="int" class="form-control" name="q3" id="q3-input" /><br>
+                        <input type="hidden" name="formInstance" value="post" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" name="action" value="Add Driver" class="btn btn-primary"/> 
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Update Driver</h2>
+            </div>
+            <form method="POST" action="/get_qualifying_front" id="post-driver">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="id-input" class="form-label">Id</label>
+                        <input type="int" class="form-control" name="qualifyId" id="id-input" /><br>
+                        <label for="raceId-input" class="form-label">Race Id</label>
+                        <input type="int" class="form-control" name="raceId" id="raceId-input" /><br>
+                        <label for="driverId-input" class="form-label">Driver Id</label>
+                        <input type="int" class="form-control" name="driverId" id="driverId-input" /><br>
+                        <label for="constructorId-input" class="form-label">Constructor Id</label>
+                        <input type="int" class="form-control" name="constructorId" id="constructorId-input" /><br>
+                        <label for="number-input" class="form-label">Number</label>
+                        <input type="string" class="form-control" name="number" id="number-input" /><br>
+                        <label for="position-input" class="form-label">Position</label>
+                        <input type="int" class="form-control" name="position" id="position-input" /><br>
+                        <label for="q1-input" class="form-label">Q1</label>
+                        <input type="int" class="form-control" name="q1" id="q1-input" /><br>
+                        <label for="q2-input" class="form-label">Q2</label>
+                        <input type="int" class="form-control" name="q2" id="q2-input" /><br>
+                        <label for="q3-input" class="form-label">Q3</label>
+                        <input type="int" class="form-control" name="q3" id="q3-input" /><br>
+                        <input type="hidden" name="formInstance" value="put" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" name="action" value="Update Driver" class="btn btn-primary"/>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
