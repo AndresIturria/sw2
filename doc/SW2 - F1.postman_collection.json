@@ -1,0 +1,850 @@
+{
+	"info": {
+		"_postman_id": "56eb17e2-3253-4057-9975-ef6507d6dec1",
+		"name": "SW2 - F1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21458605"
+	},
+	"item": [
+		{
+			"name": "/circuits",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/circuits",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"circuits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/circuit/{circuitId}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/circuits/:circuitId",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"circuits",
+						":circuitId"
+					],
+					"variable": [
+						{
+							"key": "circuitId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/circuits",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "circuitRef",
+							"value": "ejemplo_sw2",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Ejemplo SW2",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "CEU",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "Spain",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/circuits",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"circuits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/circuit/{circuitId}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "circuitRef",
+							"value": "ejemplo_sw2_PUT",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Ejemplo SW2",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "CEU",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "Spain",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/circuits/:circuitId",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"circuits",
+						":circuitId"
+					],
+					"variable": [
+						{
+							"key": "circuitId",
+							"value": "80"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/drivers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/drivers",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"drivers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/drivers/{driverId}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/drivers/:driverId",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"drivers",
+						":driverId"
+					],
+					"variable": [
+						{
+							"key": "driverId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/drivers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "driverRef",
+							"value": "sw2driver",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "22",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "CEU",
+							"type": "text"
+						},
+						{
+							"key": "forename",
+							"value": "SanPablo",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "CEU",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "1900-01-01",
+							"type": "text"
+						},
+						{
+							"key": "nationality",
+							"value": "Spanish",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/drivers",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"drivers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/drivers/{driverId}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "driverRef",
+							"value": "sw2driver_PUT",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "22",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "CEU",
+							"type": "text"
+						},
+						{
+							"key": "forename",
+							"value": "SanPablo",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "CEU",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "1900-01-01",
+							"type": "text"
+						},
+						{
+							"key": "nationality",
+							"value": "Spanish",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/drivers/:driverId",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"drivers",
+						":driverId"
+					],
+					"variable": [
+						{
+							"key": "driverId",
+							"value": "856"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/races",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/races",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"races"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/races/{raceId}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/races/:raceId",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"races",
+						":raceId"
+					],
+					"variable": [
+						{
+							"key": "raceId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/races",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "year",
+							"value": "2022",
+							"type": "text"
+						},
+						{
+							"key": "round",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "circuitId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "CEU San Pablo",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2022-06-01",
+							"type": "text"
+						},
+						{
+							"key": "time",
+							"value": "00:00:00",
+							"type": "text"
+						},
+						{
+							"key": "fp1_date",
+							"value": "Spanish",
+							"type": "text"
+						},
+						{
+							"key": "fp1_time",
+							"value": "\\\\N",
+							"type": "text"
+						},
+						{
+							"key": "fp2_date",
+							"value": "\\\\N",
+							"type": "text"
+						},
+						{
+							"key": "fp2_time",
+							"value": "\\\\N",
+							"type": "text"
+						},
+						{
+							"key": "fp3_date",
+							"value": "\\\\N",
+							"type": "text"
+						},
+						{
+							"key": "fp3_time",
+							"value": "\\\\N",
+							"type": "text"
+						},
+						{
+							"key": "quali_date",
+							"value": "\\\\N",
+							"type": "text"
+						},
+						{
+							"key": "quali_time",
+							"value": "\\\\N",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/races",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"races"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/races/{raceId}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "year",
+							"value": "2022",
+							"type": "text"
+						},
+						{
+							"key": "round",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "circuitId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "CEU San Pablo_PUT",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2022-06-01",
+							"type": "text"
+						},
+						{
+							"key": "time",
+							"value": "00:00:00",
+							"type": "text"
+						},
+						{
+							"key": "fp1_date",
+							"value": "Spanish",
+							"type": "text"
+						},
+						{
+							"key": "fp1_time",
+							"value": "\\\\N",
+							"type": "text"
+						},
+						{
+							"key": "fp2_date",
+							"value": "\\\\N",
+							"type": "text"
+						},
+						{
+							"key": "fp2_time",
+							"value": "\\\\N",
+							"type": "text"
+						},
+						{
+							"key": "fp3_date",
+							"value": "\\\\N",
+							"type": "text"
+						},
+						{
+							"key": "fp3_time",
+							"value": "\\\\N",
+							"type": "text"
+						},
+						{
+							"key": "quali_date",
+							"value": "\\\\N",
+							"type": "text"
+						},
+						{
+							"key": "quali_time",
+							"value": "\\\\N",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/races/:raceId",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"races",
+						":raceId"
+					],
+					"variable": [
+						{
+							"key": "raceId",
+							"value": "1097"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/constructors (XML)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/constructors",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"constructors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/constructors/{constructorId} (XML)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/constructors/:constructorId",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"constructors",
+						":constructorId"
+					],
+					"variable": [
+						{
+							"key": "constructorId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/constructors",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "constructorRef",
+							"value": "SW2",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "CEU San Pablo",
+							"type": "text"
+						},
+						{
+							"key": "nationality",
+							"value": "Spanish",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/constructors",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"constructors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/constructors/{constructorId}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "constructorRef",
+							"value": "SW2_PUT",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "CEU San Pablo",
+							"type": "text"
+						},
+						{
+							"key": "nationality",
+							"value": "Spanish",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/constructors/:constructorId",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"constructors",
+						":constructorId"
+					],
+					"variable": [
+						{
+							"key": "constructorId",
+							"value": "215"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/qualifyings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/qualifyings",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"qualifyings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/qualifyings/{qualifyId}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/qualifyings/:qualifyId",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"qualifyings",
+						":qualifyId"
+					],
+					"variable": [
+						{
+							"key": "qualifyId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/qualifyings",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "raceId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "driverId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "constructorId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "position",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "q1",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "q2",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "q3",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/qualifyings",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"qualifyings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/qualifyings/{qualifyId}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "raceId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "driverId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "constructorId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "position",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "q1",
+							"value": "PUT",
+							"type": "text"
+						},
+						{
+							"key": "q2",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "q3",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/qualifyings/:qualifyId",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"qualifyings",
+						":qualifyId"
+					],
+					"variable": [
+						{
+							"key": "qualifyId",
+							"value": "9293"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

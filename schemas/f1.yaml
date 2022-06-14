@@ -435,7 +435,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
 
-  /qualifying:
+  /qualifyings:
     get:
       summary: Returns every available qualifying
       description:
@@ -475,7 +475,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/error'
 
-  /qualifying/{qualifyingId}:
+  /qualifyings/{qualifyId}:
     get:
       summary: Retrieves information from a specific qualifying
       description: Retrieves information from a specific qualifying
