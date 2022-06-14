@@ -39,7 +39,7 @@ router.post('/', async function (req, res, next) {
 
     }
     else if (req.body.formInstance == "put"){ // ----------------put---------------------------------
-        let urlString = `http://localhost:3000/constructors/${req.body.raceId}`
+        let urlString = `http://localhost:3000/constructors/${req.body.constructorId}`
         let constructorJson = {
             constructorRef: req.body.constructorRef,
             name: req.body.name,
@@ -47,7 +47,7 @@ router.post('/', async function (req, res, next) {
         };
         try {
             const consulta = await axios.put(urlString, constructorJson)
-            res.send("<p>Constructor updated<p></p><a href='/races_front'>Go Back</a>");
+            res.send("<p>Constructor updated<p></p><a href='/constructors_front'>Go Back</a>");
         } catch (error) {
             console.error(error);
         }

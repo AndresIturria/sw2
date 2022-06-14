@@ -87,7 +87,7 @@ router.post('/', async function (req, res, next) {
     else if (req.body.formInstance == "post"){ //--------post-------------------------------------
         try {
             let urlString = `http://localhost:3000/circuits/`
-            circuitson = {
+            circuitJson = {
                 circuitRef: req.body.circuitRef,
                 name: req.body.name,
                 circuitId: req.body.circuitId,
